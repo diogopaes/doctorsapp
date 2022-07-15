@@ -1,14 +1,25 @@
 import React from 'react';
-import { Button, Text } from 'react-native';
-import { Container, Title } from './styles';
+import { Container, ImageLogo, TextGroup, Title } from './styles';
+
+import logo from '../../assets/img/logo.png';
+import { Button } from '../../components/Button';
 
 export function Home() {
+
+    function handleSubmit() {
+        console.log('Agenda')
+    }
+
     return (
         <Container>
-            <Title>Bem vindo ao DoctorAppaa!</Title>
-            <Text>Vamos agendar uma consulta?</Text>
+            <ImageLogo source={logo} />
 
-            <Button title="Agendar" />
+            <TextGroup>
+                <Title>Bem vindo,</Title>
+                <Title>Vamos agendar uma consulta?</Title>
+            </TextGroup>
+
+            <Button title='Agendar Consulta' handleSubmit={handleSubmit} />
         </Container>
     );
 }

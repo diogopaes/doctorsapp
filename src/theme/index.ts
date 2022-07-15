@@ -1,9 +1,9 @@
 export default {
   COLORS: {
-    primary: '#000',
-    secundary: '#fff',
+    primary: '#57FF9A',
+    secundary: '#726868',
 
-    main: '#fff',
+    white: '#fff',
   },
 
   FONTS: {
