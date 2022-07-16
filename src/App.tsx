@@ -1,13 +1,14 @@
 import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 
 import { ThemeProvider } from 'styled-components';
+import { Routes } from './routes';
 import theme from './theme';
-import { Schedules } from './screens/Schedules';
 
 const App = () => {
     return (
         <ThemeProvider theme={theme}>
-            <Schedules />
+            <Routes />
         </ThemeProvider>
     );
 };

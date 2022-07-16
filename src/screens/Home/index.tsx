@@ -3,11 +3,13 @@ import { Container, ImageLogo, TextGroup, Title } from './styles';
 
 import logo from '../../assets/img/logo.png';
 import { Button } from '../../components/Button';
+import { useNavigation } from '@react-navigation/native';
 
 export function Home() {
+    const navigation = useNavigation();
 
     function handleSubmit() {
-        console.log('Agenda')
+        navigation.navigate('Schedules');
     }
 
     return (
@@ -19,7 +21,7 @@ export function Home() {
                 <Title>Vamos agendar uma consulta?</Title>
             </TextGroup>
 
-            <Button title='Agendar Consulta' handleSubmit={handleSubmit} width={221} height={65} fontSize={16} />
+            <Button title='Meus Agendamentos' handleSubmit={handleSubmit} width={221} height={65} fontSize={16} />
         </Container>
     );
 }
