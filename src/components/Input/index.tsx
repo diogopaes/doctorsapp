@@ -1,12 +1,29 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Control, Controller } from 'react-hook-form';
 
 import { Container } from './styles';
 
-export function Input() {
+interface inputProps {
+  control: Control,
+  rules?: any,
+  name: string,
+  placeholder: string,
+}
+
+export function Input({ control, rules, name, placeholder, ...rest }: inputProps) {
   return (
-    <Container>
-      <Text>Input</Text>
-    </Container>
+    <Controller
+      control={control}
+      rules={rules}
+      render={({ field: { onChange, value } }) => (
+        <Container
+          onChangeText={onChange}
+          value={value}
+          placeholder={placeholder}
+          placeholderTextColor="#ccc"
+          {...rest} />
+      )}
+      name={name}
+    />
   );
 }

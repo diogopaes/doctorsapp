@@ -6,11 +6,13 @@ import { Button } from '../../components/Button';
 import { Container, Logo, Nav, Text } from './styles';
 
 import logo from '../../assets/img/logo.png';
+import { useNavigation } from '@react-navigation/native';
 
 export function Schedules() {
+  const navigation = useNavigation();
 
   function handleSubmit() {
-    console.log('Schedules')
+    navigation.navigate('CreateScheduling')
   }
 
   return (
