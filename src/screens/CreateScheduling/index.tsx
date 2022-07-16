@@ -5,11 +5,12 @@ import { Button } from '../../components/Button';
 
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
+import { Select } from '../../components/Select';
 
 import { Container, Text, Form } from './styles';
 
 export function CreateScheduling() {
-  const { control, handleSubmit, formState: { errors } } = useForm();
+  const { control, setValue, handleSubmit, formState: { errors } } = useForm();
 
   function onSubmit(data) {
     console.log(data);
@@ -19,7 +20,7 @@ export function CreateScheduling() {
     <Container>
       <Header title='Agendar' />
       <Text>Selecione a especialidade, data e horário.</Text>
-
+      <Select control={control} name='specialties' placeholder="Especialidade" setValue={setValue} />
 
       <Text>Suas Informações ou do paciente.</Text>
 
