@@ -19,7 +19,7 @@ export function Home() {
                 <Title>Vamos agendar uma consulta?</Title>
             </TextGroup>
 
-            <Button title='Agendar Consulta' handleSubmit={handleSubmit} />
+            <Button title='Agendar Consulta' handleSubmit={handleSubmit} width={221} height={65} fontSize={16} />
         </Container>
     );
 }
