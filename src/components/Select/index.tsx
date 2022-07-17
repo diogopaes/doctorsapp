@@ -12,7 +12,7 @@ interface inputProps {
   placeholder: string
 }
 
-export function Select({ control, rules, name, setValue }: inputProps) {
+export function Select({ control, rules, name }: inputProps) {
   return (
     <Controller
       control={control}
@@ -25,11 +25,11 @@ export function Select({ control, rules, name, setValue }: inputProps) {
               onChange(value);
             }}
             dropdownIconColor="#726868"
-            placeholder='teste'
             style={{ color: '#726868' }}
           >
-            <Picker.Item label="Clínico Geral" value="clinica" />
-            <Picker.Item label="Cardiologista" value="cardiologista" />
+            <Picker.Item style={{ fontSize: 14 }} label="Selecione a Especialiade" value="" />
+            <Picker.Item style={{ fontSize: 14 }} label="Clínico Geral" value="clinica" />
+            <Picker.Item style={{ fontSize: 14 }} label="Cardiologista" value="cardiologista" />
           </Picker>
         </Container>
 

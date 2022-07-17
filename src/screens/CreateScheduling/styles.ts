@@ -9,6 +9,8 @@ export const Container = styled.View`
 export const Text = styled.Text`
   color: ${({ theme }) => theme.COLORS.secundary};
   font-family: ${({ theme }) => theme.FONTS.TEXT};
+  margin-top: 30px;
+  margin-bottom: 10px;
 `;
 
-export const Form = styled.View``;
+export const Form = styled.ScrollView``;

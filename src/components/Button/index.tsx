@@ -5,8 +5,8 @@ import { Container, Title } from './styles';
 interface buttonProps {
   title?: string,
   handleSubmit(): void,
-  height: number,
-  width: number,
+  height?: number,
+  width?: number,
   fontSize: number,
   icon?: string
 }
