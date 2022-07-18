@@ -1,5 +1,5 @@
 import React from 'react';
-import { Control, Controller, FieldError } from 'react-hook-form';
+import { Control, Controller } from 'react-hook-form';
 
 import { Container, Error } from './styles';
 
@@ -24,7 +24,8 @@ export function Input({ control, rules, name, placeholder, errors, ...rest }: in
             value={value}
             placeholder={placeholder}
             placeholderTextColor="#ccc"
-            {...rest} />
+            {...rest}
+          />
         )}
         name={name}
       />

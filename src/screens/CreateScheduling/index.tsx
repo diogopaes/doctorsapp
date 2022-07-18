@@ -2,9 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+
 import { Button } from '../../components/Button';
 import { DatePicker } from '../../components/DatePicker';
-
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
@@ -26,8 +26,16 @@ export function CreateScheduling() {
     resolver: yupResolver(schema)
   });
 
-  function onSubmit(data) {
-    console.log(data);
+  async function onSubmit(data) {
+    const form = JSON.stringify(data);
+    await fetch('https://webhook.site/4c7222b6-b2de-402b-be6d-42e87f13bda7', {
+      method: 'POST',
+      body: form,
+    }).then(function (response) {
+      console.log('resposta', response)
+    }).catch(function (err) {
+      console.error('Erro', err);
+    });
   }
 
   return (
