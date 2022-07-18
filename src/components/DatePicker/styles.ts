@@ -19,3 +19,11 @@ export const Button = styled.TouchableOpacity`
 export const Text = styled.Text`
   color: ${({ theme }) => theme.COLORS.secundary};
 `;
+
+export const Error = styled.Text`
+  color: #fa4c4c;
+  font-family: ${({ theme }) => theme.FONTS.TEXT};
+  font-size: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+`;

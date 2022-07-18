@@ -5,16 +5,17 @@ import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { Control, Controller } from 'react-hook-form';
 
-import { Button, Container, Text } from './styles';
+import { Button, Container, Error, Text } from './styles';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 interface inputProps {
   control: Control,
   rules?: any,
   name: string,
+  errors: string | any,
 }
 
-export function DatePicker({ control, rules, name }: inputProps) {
+export function DatePicker({ control, rules, name, errors }: inputProps) {
   const [date, setDate] = useState(new Date())
   const [open, setOpen] = useState(false)
 
@@ -33,32 +34,37 @@ export function DatePicker({ control, rules, name }: inputProps) {
   }
 
   return (
-    <Controller
-      control={control}
-      rules={rules}
-      render={({ field: { onChange, value = date } }) => (
-        <Container>
-          <Button onPress={() => setOpen(true)}>
-            <Text>{filterDay()}</Text>
-            <Icon name="calendar" size={16} color="#2222" />
-          </Button>
-          <DateTimePicker
-            modal
-            open={open}
-            date={date}
-            textColor='#fff'
-            onConfirm={(value) => {
-              onChange(value);
-              setOpen(false)
-              setDate(value)
-            }}
-            onCancel={() => {
-              setOpen(false)
-            }}
-          />
-        </Container>
-      )}
-      name={name}
-    />
+    <>
+      <Controller
+        control={control}
+        rules={rules}
+        render={({ field: { onChange, value = date } }) => (
+          <Container>
+            <Button onPress={() => setOpen(true)}>
+              <Text>{filterDay()}</Text>
+              <Icon name="calendar" size={16} color="#2222" />
+            </Button>
+            <DateTimePicker
+              modal
+              open={open}
+              date={date}
+              textColor='#fff'
+              onConfirm={(value) => {
+                onChange(value);
+                setOpen(false)
+                setDate(value)
+              }}
+              onCancel={() => {
+                setOpen(false)
+              }}
+            />
+          </Container>
+        )}
+        name={name}
+      />
+      {errors &&
+        <Error>{errors}</Error>
+      }
+    </>
   );
 }
