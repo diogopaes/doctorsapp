@@ -6,7 +6,6 @@ import { ptBR } from 'date-fns/locale';
 import { Control, Controller } from 'react-hook-form';
 
 import { Button, Container, Error, Text } from './styles';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 interface inputProps {
   control: Control,
@@ -41,8 +40,8 @@ export function DatePicker({ control, rules, name, errors }: inputProps) {
         render={({ field: { onChange, value = date } }) => (
           <Container>
             <Button onPress={() => setOpen(true)}>
-              <Text>{filterDay()}</Text>
               <Icon name="calendar" size={16} color="#2222" />
+              <Text>{filterDay()}</Text>
             </Button>
             <DateTimePicker
               modal

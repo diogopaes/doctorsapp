@@ -9,7 +9,7 @@ export const Container = styled.View`
 export const Text = styled.Text`
   color: ${({ theme }) => theme.COLORS.secundary};
   font-family: ${({ theme }) => theme.FONTS.TEXT};
-  margin-top: 30px;
+  margin-top: 20px;
   margin-bottom: 10px;
 `;
 

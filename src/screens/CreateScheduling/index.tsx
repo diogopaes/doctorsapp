@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -12,8 +12,11 @@ import { Select } from '../../components/Select';
 
 import { Container, Text, Form } from './styles';
 import { useNavigation } from '@react-navigation/native';
+import { SchedulesContext } from '../../hooks/Schedules';
 
 export function CreateScheduling() {
+  const { addScheduling } = useContext(SchedulesContext)
+
   const schema = yup.object().shape({
     specialties: yup.string().required('Especialidade é Obrigatório.'),
     dateTime: yup.string().required('Data e Hora é Obrigatório.'),
@@ -40,6 +43,7 @@ export function CreateScheduling() {
         text1: 'Agendando com sucesso 👋'
       });
       navigation.navigate('Schedules');
+      addScheduling({ ...data, id: response._bodyInit._data.blobId });
     }).catch(function (err) {
       Toast.show({
         type: 'error',
@@ -57,10 +61,10 @@ export function CreateScheduling() {
         <DatePicker control={control} name="dateTime" errors={errors?.dateTime?.message} />
 
         <Text>Suas Informações ou do paciente.</Text>
-        <Input control={control} name='name' placeholder='Nome Completo' errors={errors?.name?.message} />
-        <Input control={control} name='cpf' placeholder='CPF' errors={errors?.cpf?.message} />
-        <Input control={control} name='birthDate' placeholder='Data de Nascimento' errors={errors?.birthDate?.message} />
-        <Input control={control} name='phone' placeholder='Telefone' errors={errors?.phone?.message} />
+        <Input control={control} name='name' placeholder='Nome Completo' errors={errors?.name?.message} icon='user' />
+        <Input control={control} name='cpf' placeholder='CPF' errors={errors?.cpf?.message} icon='file-text' />
+        <Input control={control} name='birthDate' placeholder='Data de Nascimento' errors={errors?.birthDate?.message} icon='calendar' />
+        <Input control={control} name='phone' placeholder='Telefone' errors={errors?.phone?.message} icon='smartphone' />
 
         <Button title='Agendar' handleSubmit={handleSubmit(onSubmit)} height={65} fontSize={16} />
       </Form>

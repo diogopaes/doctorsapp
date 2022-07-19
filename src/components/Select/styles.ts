@@ -2,10 +2,12 @@ import { TextInput } from 'react-native';
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  border-radius: 10px;
+  border-radius: 15px;
   border-width: 1px;
   border-color: #ccc;
   margin: 10px 0;
+  height: 60px;
+  justify-content: center;
   padding: 0;
   color: ${({ theme }) => theme.COLORS.secundary};
 `;

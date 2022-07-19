@@ -7,7 +7,7 @@ export const Container = styled.TouchableOpacity`
   max-width: 221px;
   height: 65px;
   background-color: ${({ theme }) => theme.COLORS.primary};
-  border-radius: 10px;
+  border-radius: 50px;
 `;
 
 export const Title = styled.Text`

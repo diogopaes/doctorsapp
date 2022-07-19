@@ -26,7 +26,7 @@ export function Select({ control, rules, name, errors }: inputProps) {
               onValueChange={(value) => {
                 onChange(value);
               }}
-              dropdownIconColor="#726868"
+              dropdownIconColor="#ccc"
               style={{ color: '#726868' }}
             >
               <Picker.Item style={{ fontSize: 14 }} label="Selecione a Especialiade" value="" />

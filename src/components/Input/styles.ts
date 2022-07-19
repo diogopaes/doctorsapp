@@ -1,13 +1,20 @@
 import { TextInput } from 'react-native';
 import styled from 'styled-components/native';
 
-export const Container = styled(TextInput)`
-  border-radius: 10px;
+export const Container = styled.View`
+  border-radius: 15px;
   border-width: 1px;
   border-color: #ccc;
-  margin: 10px 0;
-  padding: 15px;
+  height: 60px;
+  align-items: center;
+  padding-left: 15px;
+  flex-direction: row;
+  margin-bottom: 20px;
+`;
+
+export const InputText = styled(TextInput)`
   color: ${({ theme }) => theme.COLORS.secundary};
+  margin-left: 5px;
 `;
 
 export const Error = styled.Text`
