@@ -67,8 +67,6 @@ $ yarn install
 $ yarn start, npx react-native run-android, npx react-native run-ios 
 ```
 
-## :framed_picture: Imagens ##
-
 </br>
 
 ♥ by Diogo Paes 👋 <a href="https://www.linkedin.com/in/diogopaes/">Talk to me!</a>
