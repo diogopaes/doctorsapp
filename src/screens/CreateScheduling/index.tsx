@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import Toast from 'react-native-toast-message';
+import { WEBHOOK_SITE_URL } from '@env';
 
 import { Button } from '../../components/Button';
 import { DatePicker } from '../../components/DatePicker';
@@ -34,7 +35,7 @@ export function CreateScheduling() {
 
   async function onSubmit(data) {
     const form = JSON.stringify(data);
-    await fetch('https://webhook.site/4c7222b6-b2de-402b-be6d-42e87f13bda7/schedules', {
+    await fetch(`${WEBHOOK_SITE_URL}`, {
       method: 'POST',
       body: form,
     }).then(function (response) {
